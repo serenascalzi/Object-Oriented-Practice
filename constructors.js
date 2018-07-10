@@ -36,9 +36,45 @@ function expect(target) {
 //
 // Only add code to *THIS* section!
 
-// ????????
-// ????????
-// ????????
+function Dog(obj) {
+  this.status = 'normal'
+  this.owner = undefined
+  if (obj) {
+    if (obj.hasOwnProperty('color')) {
+      this.color = obj.color
+    } else {
+      this.color = ''
+    }
+  }
+  if (obj) {
+    if (obj.hasOwnProperty('hungry')) {
+      this.hungry = obj.hungry
+    } else {
+      this.hungry = true
+    }
+  }
+}
+
+function Human(obj) {
+  if (obj) {
+    if (obj.hasOwnProperty('cool')) {
+      this.cool = obj.cool
+    } else {
+      this.cool = false
+    }
+  } else{
+    this.cool = false
+  }
+}
+
+Human.prototype.pet = function(dog) {
+  dog.status = 'happy'
+}
+
+Human.prototype.feed = function(dog) {
+  dog.hungry = false
+}
+
 
 
 //        __
